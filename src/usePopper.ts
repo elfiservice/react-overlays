@@ -16,14 +16,13 @@ const initialPopperStyles = (
 const disabledApplyStylesModifier = { name: 'applyStyles', enabled: false };
 
 // In order to satisfy the current usage of options, including undefined
-type OptionsWithUndefined<
-  T extends Popper.Obj | undefined
-> = T extends Popper.Obj ? T : Popper.Obj;
+type OptionsWithUndefined<T extends Popper.Obj | undefined> =
+  T extends Popper.Obj ? T : Popper.Obj;
 
 // until docjs supports type exports...
 export type Modifier<
   Name,
-  Options extends Popper.Obj | undefined
+  Options extends Popper.Obj | undefined,
 > = Popper.Modifier<Name, OptionsWithUndefined<Options>>;
 
 export type Options = Popper.Options;

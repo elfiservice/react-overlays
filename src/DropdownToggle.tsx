@@ -26,8 +26,11 @@ export function useDropdownToggle(): [
   UseDropdownToggleProps,
   UseDropdownToggleMetadata,
 ] {
-  const { show = false, toggle = noop, setToggle } =
-    useContext(DropdownContext) || {};
+  const {
+    show = false,
+    toggle = noop,
+    setToggle,
+  } = useContext(DropdownContext) || {};
   const handleClick = useCallback(
     (e) => {
       toggle(!show, e);
